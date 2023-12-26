@@ -13,13 +13,8 @@ const Header = () => (
   />
 );
 
-const instance = axios.create({
-  baseURL: "/api",
-  withCredentials: true,
-});
-
 const TestButton = () => {
-  const { isSuccess, data } = useQuery("test", () => instance.get("/test"));
+  const { isSuccess, data } = useQuery("test", () => axios.get("/api/test"));
   const toast = useToast();
   const result = isSuccess ? "success" : "error";
   const onClick = () => {
