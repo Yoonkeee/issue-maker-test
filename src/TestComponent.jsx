@@ -18,11 +18,11 @@ const TestButton = () => {
   const toast = useToast();
   // const result = isSuccess ? "success" : "error";
   const onClick = () => {
-    axios.get("/api/test").then((res) => {
+    axios.get("/api/get/dogs-list").then((res) => {
       console.log(res);
       toast({
         title: "success",
-        description: res.data.toString(),
+        description: res.data,
         status: "success",
         position: "top",
         duration: 500,
