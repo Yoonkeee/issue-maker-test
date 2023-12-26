@@ -22,7 +22,7 @@ const TestButton = () => {
       console.log(res);
       toast({
         title: "success",
-        description: res.data,
+        description: res.data.toString(),
         status: "success",
         position: "top",
         duration: 500,
