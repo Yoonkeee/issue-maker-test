@@ -14,18 +14,29 @@ const Header = () => (
 );
 
 const TestButton = () => {
-  const { isSuccess, data } = useQuery("test", () => axios.get("/api/test"));
+  // const { isSuccess, data } = useQuery("test", () => axios.get("/api/test"));
   const toast = useToast();
-  const result = isSuccess ? "success" : "error";
+  // const result = isSuccess ? "success" : "error";
   const onClick = () => {
-    toast({
-      title: result,
-      description: data,
-      status: result,
-      position: "top",
-      duration: 500,
-      isClosable: true,
+    axios.get("/api/test").then((res) => {
+      console.log(res);
+      toast({
+        title: "success",
+        description: res.data,
+        status: "success",
+        position: "top",
+        duration: 500,
+        isClosable: true,
+      });
     });
+    // toast({
+    //   title: result,
+    //   description: data,
+    //   status: result,
+    //   position: "top",
+    //   duration: 500,
+    //   isClosable: true,
+    // });
   };
   return (
     <Button colorScheme="whatsapp" mt="20vh" onClick={onClick} variant="solid">
