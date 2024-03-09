@@ -19,17 +19,15 @@ export const GithubTest = () => {
   const [techdoc, setTechdoc] = useState("");
   const repos = {
     "clap-web": {
-      url: 'https://github.com/dwhale-dev/clap-web',
-    }
-  }
+      url: "https://github.com/dwhale-dev/clap-web",
+    },
+  };
   // const [repository, setRepository] = useState('');
   // const [token, setToken] = useState('');
-  // const token =
-  //   "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";
   // const repository = "useRemind_dev_";
 
   const octokit = new Octokit({
-    auth: "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",
+    auth: process.env["github-token"],
   });
 
   // await octokit.request('GET /repos/{owner}/{repo}', {
