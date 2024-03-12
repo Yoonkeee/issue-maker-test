@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Octokit } from "octokit";
 import {
   Button,
+  Flex,
   FormControl,
   FormHelperText,
   FormLabel,
@@ -182,14 +183,20 @@ export const Init = () => {
             />
           </VStack>
           <Button
+            colorScheme="messenger"
             gap={2}
+            h="60px"
             my="50px"
             onClick={handleSubmit}
             type="submit"
             w="100%"
           >
-            <FaGithub />
-            <Text>Repo, Label 설정</Text>
+            <Flex w="50px">
+              <FaGithub size="md" />
+            </Flex>
+            <Text fontSize="lg" fontWeight={800}>
+              Repo, Label 설정
+            </Text>
           </Button>
         </VStack>
       </FormControl>
